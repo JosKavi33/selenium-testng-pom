@@ -1,0 +1,49 @@
+name: Run Selenium TestNG Suite
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ☕ Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 🛠️ Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: '3.9.6'
+
+      - name: 🔧 Make scripts executable
+        run: chmod +x scripts/*.sh
+
+      - name: 🚀 Run test suite
+        run: ./scripts/run_suite.sh
+
+      - name: 📊 Generate Allure Report
+        run: ./scripts/run_allure.sh
+
+      - name: 🗂️ Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin
+
+      - name: 🌐 Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/allure-maven-plugin

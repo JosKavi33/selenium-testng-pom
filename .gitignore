@@ -1,0 +1,58 @@
+# =============================
+# 📦 Java Build and Packaging
+# =============================
+target/
+build/
+out/
+
+# =============================
+# ⚙️ Maven Wrapper
+# =============================
+!.mvn/wrapper/maven-wrapper.jar
+
+# =============================
+# 🧪 Allure Reports
+# =============================
+allure-results/
+allure-report/
+
+# =============================
+# 💻 IDEs
+# -----------------------------
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+.apt_generated
+.factorypath
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# =============================
+# 🖥️ Operating system
+# =============================
+.DS_Store
+Thumbs.db
+
+# =============================
+# 💥 Other
+# =============================
+*.log
+*.tmp
+*.bak
+*.old
+*.swp
