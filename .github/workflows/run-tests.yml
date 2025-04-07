@@ -40,6 +40,8 @@ jobs:
 
       - name: 🛠️ Create gh-pages branch if not exists
         run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "github-actions"
           git fetch
           git checkout gh-pages || git checkout --orphan gh-pages
           git reset --hard
