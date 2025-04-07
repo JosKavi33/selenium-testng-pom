@@ -25,8 +25,8 @@ of the website using **Selenium + TestNG** and applying the **Page Object Model 
  ┣ 📂 .github
  ┃ ┗ 📂 workflows         # GitHub Actions workflow file 
  ┣ 📂 scripts
- ┃ ┣ run_suite.sh         # Executes tests via Maven
- ┃ ┗ run_allure.sh        # Generates Allure report
+ ┃ ┣ run_suite.sh         # Executes tests via Maven and Generates Allure report
+ ┃ ┗ run_allure.sh        # Generates Allure Report at Local Serve
  ┣ 📂 src
  ┃ ┣ 📂 main
  ┃ ┃ ┗ 📂 resources       # General configuration files (e.g., config.properties) 
@@ -65,6 +65,24 @@ $ cd selenium-testng-pom
 # Install dependencies
 $ mvn clean install
 ```
+
+---
+
+## 🧪 Run the test suite
+
+```bash
+./scripts/run_suite.sh
+```
+
+🛠️ This script compiles the project, runs the tests, and generates the report in target/site/allure-maven-plugin.
+
+## 📊 View the Allure report on-premises
+
+```bash
+./scripts/run_allure.sh
+```
+
+🌐 This will automatically open the report in your default browser
 
 ---
 

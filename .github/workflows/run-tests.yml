@@ -38,16 +38,6 @@ jobs:
           name: allure-report
           path: target/site/allure-maven-plugin
 
-      - name: 🛠️ Create gh-pages branch if not exists
-        run: |
-          git config user.email "github-actions@github.com"
-          git config user.name "github-actions"
-          git fetch
-          git checkout gh-pages || git checkout --orphan gh-pages
-          git reset --hard
-          git commit --allow-empty -m "Init gh-pages"
-          git push origin gh-pages
-
       - name: 🌐 Deploy Allure Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
