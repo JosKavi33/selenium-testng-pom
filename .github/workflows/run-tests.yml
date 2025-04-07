@@ -26,6 +26,9 @@ jobs:
       - name: 🔧 Make scripts executable
         run: chmod +x scripts/*.sh
 
+      - name: ✅ Make mvnw executable
+        run: chmod +x ./mvnw
+
       - name: 🚀 Run test suite and generate Allure report
         run: ./scripts/run_suite.sh
 
