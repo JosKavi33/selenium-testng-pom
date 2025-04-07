@@ -30,8 +30,7 @@ jobs:
         run: ./scripts/run_suite.sh
 
       - name: 🗂️ Upload Allure Report
-        if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
