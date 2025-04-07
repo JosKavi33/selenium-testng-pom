@@ -141,6 +141,39 @@ mvn test -Dgroup=regression
 
 ---
 
+## 🔄 GitHub Actions Workflow
+
+Every push or pull request to the main branch triggers the test suite via GitHub Actions. After execution:
+
+🔹An Allure report is generated.
+🔹The report is uploaded as an artifact (downloadable ZIP).
+🔹The report is also deployed to GitHub Pages.
+
+---
+
+## 📁 How to View Allure Report from GitHub Actions
+
+1. Go to the Actions tab.
+2. Select the latest workflow run (with ✅ or ❌).
+3. Scroll down to the Artifacts section.
+4. Download the allure-report ZIP.
+5. Extract it on your machine.
+6. Open index.html inside the extracted folder using your browser.
+
+⚠️ If the report does not load properly locally (e.g., shows 404 errors), use GitHub Pages instead.
+
+---
+
+## 🌐 View Allure Report via GitHub Pages
+
+You can access the latest report directly from:
+
+```http
+https://joskavi33.github.io/selenium-testng-pom/
+```
+
+---
+
 ## ✨ Contributing
 
 Contributions are welcome!
