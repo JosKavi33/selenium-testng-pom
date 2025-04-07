@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Starting the test run..."
+echo "Running test suite and generating Allure Report..."
 ./mvnw clean test -Dgroups=regression -Dbrowser="chrome" -Dheadless
-echo "Tests completed."
+./mvnw allure:report

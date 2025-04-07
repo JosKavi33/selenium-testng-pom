@@ -26,11 +26,8 @@ jobs:
       - name: 🔧 Make scripts executable
         run: chmod +x scripts/*.sh
 
-      - name: 🚀 Run test suite
+      - name: 🚀 Run test suite and generate Allure report
         run: ./scripts/run_suite.sh
-
-      - name: 📊 Generate Allure Report
-        run: ./scripts/run_allure.sh
 
       - name: 🗂️ Upload Allure Report
         if: always()
@@ -38,7 +35,6 @@ jobs:
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
-    
 
       - name: 🌐 Deploy Allure Report to GitHub Pages
         if: always()
