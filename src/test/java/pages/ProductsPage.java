@@ -54,12 +54,12 @@ public class ProductsPage extends BasePage {
     @Step("🔍 Verifying ProductsPage")
     public void verifyPage() {
         Logs.info("🔍 Verifying ProductsPage");
-        softAssert.assertTrue(find(especialOfertImage).isDisplayed(), "Failure in especialOfertImage");
-        softAssert.assertTrue(find(searchProductInput).isDisplayed(), "Failure in searchProductInput");
-        softAssert.assertFalse(findAll(allProductsItemsId).isEmpty(), "Failure in allProductsItemsId");
-        softAssert.assertTrue(find(categoryTitle).isDisplayed(), "Failure in categoryTitle");
-        softAssert.assertTrue(find(brandsTitle).isDisplayed(), "Failure in brandsTitle");
-        softAssert.assertTrue(find(allProductsTitle).isDisplayed(), "Failure in allProductsTitle");
+        softAssert.assertTrue(find(especialOfertImage).isDisplayed(), "❌ Failure in especialOfertImage");
+        softAssert.assertTrue(find(searchProductInput).isDisplayed(), "❌ Failure in searchProductInput");
+        softAssert.assertFalse(findAll(allProductsItemsId).isEmpty(), "❌ Failure in allProductsItemsId");
+        softAssert.assertTrue(find(categoryTitle).isDisplayed(), "❌ Failure in categoryTitle");
+        softAssert.assertTrue(find(brandsTitle).isDisplayed(), "❌ Failure in brandsTitle");
+        softAssert.assertTrue(find(allProductsTitle).isDisplayed(), "❌ Failure in allProductsTitle");
         softAssert.assertAll();
         Logs.info("✅ The ProductsPage Verification Passed");
     }

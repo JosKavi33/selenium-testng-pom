@@ -31,9 +31,9 @@ public class CartPage extends BasePage {
     @Step("🔍 Verifying the Cart Page")
     public void verifyPage() {
         Logs.info("🔍 Verifying the CartPage");
-        softAssert.assertTrue(find(shoppingCartTitle).isDisplayed());
-        softAssert.assertTrue(find(messageOfStateCart).isDisplayed());
-        softAssert.assertTrue(find(hereLinkButton).isDisplayed());
+        softAssert.assertTrue(find(shoppingCartTitle).isDisplayed(), "❌ Failure in the Locator shoppingCartTitle");
+        softAssert.assertTrue(find(messageOfStateCart).isDisplayed(), "❌ Failure in the Locator messageOfStateCart");
+        softAssert.assertTrue(find(hereLinkButton).isDisplayed(), "❌ Failure in the Locator hereLinkButton");
         softAssert.assertAll();
         Logs.info("✅ The CartPage Verification Passed.");
     }

@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.ContacUsPage;
+import pages.ContactUsPage;
 import utilities.BaseTest;
 import utilities.CommonFlows;
 import utilities.Logs;
@@ -15,12 +15,12 @@ import utilities.Logs;
 public class ContactUsTests extends BaseTest {
 
     private final CommonFlows commonFlows = new CommonFlows();
-    private final ContacUsPage contacUsPage = new ContacUsPage();
+    private final ContactUsPage contactUsPage = new ContactUsPage();
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         commonFlows.goToContactUsPage();
-        contacUsPage.waitPageToLoad();
+        contactUsPage.waitPageToLoad();
     }
 
     @Tag(regression)
@@ -31,7 +31,7 @@ public class ContactUsTests extends BaseTest {
     @Step("Verifying ContactUsPage")
     public void verifyTest() {
         Logs.info("Verifying ContactUsPage");
-        contacUsPage.verifyPage();
+        contactUsPage.verifyPage();
     }
 
     @Tag(regression)
@@ -40,8 +40,8 @@ public class ContactUsTests extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void fillContactUsForm() {
         verifyTest();
-        contacUsPage.fillContactUsForm();
-        contacUsPage.verifySuccessMessage();
+        contactUsPage.fillContactUsForm();
+        contactUsPage.verifySuccessMessage();
     }
 
 }

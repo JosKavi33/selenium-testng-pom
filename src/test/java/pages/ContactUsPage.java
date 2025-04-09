@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import utilities.BasePage;
 import utilities.Logs;
 
-public class ContacUsPage extends BasePage {
+public class ContactUsPage extends BasePage {
 
     private final By contactUsTitle = By.xpath("//h2[text()='Contact ']");
     private final By getInTouchTitle = By.xpath("//h2[text()='Get In Touch']");
@@ -30,14 +30,14 @@ public class ContacUsPage extends BasePage {
     @Step("🔍 Verifying ContactUsPage")
     public void verifyPage() {
         Logs.info("🔍 Verifying ContactUsPage");
-        softAssert.assertTrue(find(contactUsTitle).isDisplayed());
-        softAssert.assertTrue(find(getInTouchTitle).isDisplayed());
-        softAssert.assertTrue(find(nameInput).isDisplayed());
-        softAssert.assertTrue(find(emailInput).isDisplayed());
-        softAssert.assertTrue(find(subjectInput).isDisplayed());
-        softAssert.assertTrue(find(messageInput).isDisplayed());
-        softAssert.assertTrue(find(selectFileButton).isDisplayed());
-        softAssert.assertTrue(find(submitButton).isDisplayed());
+        softAssert.assertTrue(find(contactUsTitle).isDisplayed(), "❌ Failure in the Locator contactUsTitle");
+        softAssert.assertTrue(find(getInTouchTitle).isDisplayed(), "❌ Failure in the Locator getInTouchTitle");
+        softAssert.assertTrue(find(nameInput).isDisplayed(), "❌ Failure in the Locator nameInput");
+        softAssert.assertTrue(find(emailInput).isDisplayed(), "❌ Failure in the Locator emailInput");
+        softAssert.assertTrue(find(subjectInput).isDisplayed(), "❌ Failure in the Locator subjectInput");
+        softAssert.assertTrue(find(messageInput).isDisplayed(), "❌ Failure in the Locator messageInput");
+        softAssert.assertTrue(find(selectFileButton).isDisplayed(), "❌ Failure in the Locator selectFileButton");
+        softAssert.assertTrue(find(submitButton).isDisplayed(), "❌ Failure in the Locator submitButton");
         softAssert.assertAll();
         Logs.info("✅ The ContactUsPage Verification Passed");
     }
